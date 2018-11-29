@@ -5,3 +5,29 @@ Author: Enza Lombardo
 Description: Template réalisé pour le restaurant, La Cignogne d'Or de Waremme
 Version: 1.0
 */
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto');
+
+// import bootstrap ---------------------------
+@import 'bootstrap';
+
+// import important ---------------------------
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'animated';
+
+// import theme -------------------------------
+@import 'menu';
+@import 'general';
+@import 'index-cover';
+@import 'index-intro';
+@import 'index-buffet';
+@import 'index-tarif';
+@import 'event';
+//@import 'karaoke';
+@import 'contact';
+@import 'social';
+@import 'footer';

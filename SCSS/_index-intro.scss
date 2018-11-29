@@ -1,0 +1,113 @@
+// main: style.scss
+
+
+/* --------------------------------------------- */
+/* ------------    SECTION INTRO    ------------ */
+/* --------------------------------------------- */
+
+.bg-color-gradient{
+    @include bg-radial-gradient;
+    height: 340px;
+    padding-top: 2%;
+}
+
+.content-intro{
+    .fly{
+        &-left{
+            @include bg-fly('img/fly-bird.png');
+            margin: 0 4%;
+            max-width: 250px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+        &-right{
+            @include  bg-fly('img/stork-fly.png');
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .txt-intro{
+        text-align: center;
+        font-size: 35px;
+        font-family: $fontSecondary;
+        font-weight: 500;
+        padding: 9% 5%;
+        margin-top: 3%;
+    }
+}
+
+// MEDIUM ------------------------------
+@include responsive(M){
+    .bg-color-gradient{
+        height: 170px;
+        padding-top: 2%;
+    }
+
+    .content-intro{
+        .txt-intro{
+            font-size: medium;
+            padding: 10% 0;
+            margin-top: 3%;
+        }
+        .fly-right{
+            margin-left: 15px;
+        }
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    .bg-color-gradient{
+        height: 225px;
+        padding-top: 15%;
+    }
+
+    .content-intro{
+        position: relative;
+        .fly{
+            &-left{
+                position: absolute;
+                top:-40%;
+                height: 40px;
+                max-width: 80px;
+            }
+            &-right{
+                position: absolute;
+                bottom:-20%;
+                right:3%;
+                height: 60px;
+                max-width: 120px;
+            }
+        }
+
+        .txt-intro{
+            font-size: large;
+            padding: 1% 16%;
+            margin-top: 0;
+        }
+    }
+
+}
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    .bg-color-gradient{
+        height: 140px;
+        padding-top: 0;
+    }
+
+    .content-intro{
+        position: relative;
+        .fly{
+            &-left,
+            &-right{
+                display: none;
+            }
+        }
+
+        .txt-intro{
+            font-size: medium;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// main: ../_mixins.scss
+
+
+// TRANSITION ------------------------------------------------------------
+@mixin transition-nav-item{
+    -webkit-transition: left 0.1s ease 0s, right 0.1s ease 0.1s;
+         -o-transition: left 0.1s ease 0s, right 0.1s ease 0.1s;
+            transition: left 0.1s ease 0s, right 0.1s ease 0.1s;
+}
+
+@mixin menu-bg-color {
+    -webkit-transition: background-color .5s ease 0s;
+         -o-transition: background-color .5s ease 0s;
+            transition: background-color .5s ease 0s;
+}

@@ -1,0 +1,169 @@
+// main: style.scss
+
+
+/* --------------------------------------------- */
+/* ---------------    GENERAL    --------------- */
+/* --------------------------------------------- */
+
+body{
+    background-color: $colorLight;
+    color: $colorDark;
+    font-family: $fontPrimary;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    &:hover{
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icons{
+    display: inline;
+    font-family: Flaticon;
+    font-size: 2.5rem;
+}
+section{
+    &:after{
+        clear: both;
+        content: '';
+    }
+}
+
+/* --- BOUTON --- */
+.btn{
+    width: auto;
+    line-height: 2;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    &.focus {
+      box-shadow: none !important;
+    }
+    &:focus{
+        box-shadow: none !important;
+    }
+}
+
+.btn-outline{
+    border: 2px solid $colorPrimary;
+    color: $colorPrimary;
+    &:hover{
+        color: $colorLight;
+        background-color: $colorPrimary;
+        border-color: $colorPrimary;
+    }
+}
+.btn-outline-light{
+    border: 2px solid $colorLight;
+    color: $colorLight;
+    width: 100%;
+    &hover{
+        color: $colorDark;
+        background-color: $colorLight;
+        border-color: $colorLight;
+
+    }
+}
+.btn-center{
+    text-align: center;
+    .btn{
+        font-size: x-large;
+        letter-spacing: 2px;
+        width: 50%;
+
+    }
+}
+
+
+/* --- TITRE-INDEX --- */
+.titre-h1{
+    font-family: $fontSecondary;
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color: $colorPrimary;
+
+}
+
+.sous-titre{
+    font-family: $fontSecondary;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2;
+    padding-bottom: 3rem;
+}
+
+
+.card{
+    border: none;
+    background-color: inherit;
+    .card-body{
+        //background: $colorPrimary;
+    }
+    .card-title{
+        line-height: 2;
+        margin-bottom: 0;
+        font-family: $fontSecondary;
+    }
+}
+
+
+// SMALL ------------------------------
+@include responsive(S){
+    .btn-center{
+        .btn{
+            width: 100%;
+        }
+    }
+    .titre-h1{
+        font-size: calc( 2.6rem + (4.25 - 2.6) * ((100vw - 20rem) / (48 - 20)));
+        line-height: calc( 1.4 * (2.6rem + (4.25 - 2.6) * ((100vw - 20rem) / (48 - 20))));
+    }
+    .sous-titre{
+        font-size: calc( 0.8rem + (3 - 1.3) * ((100vw - 20rem) / (48 - 20)));
+        line-height: calc( 1.4 * (1.3rem + (3 - 1.3) * ((100vw - 20rem) / (48 - 20))));
+    }
+    .card{
+        margin-bottom: 10%;
+        .card-body{
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    .btn-center{
+        .btn{
+            width: 100%;
+        }
+    }
+    .titre-h1{
+        font-size: calc( 2.6rem + (4.25 - 2.6) * ((100vw - 20rem) / (48 - 20)));
+        line-height: calc( 1.4 * (2.6rem + (4.25 - 2.6) * ((100vw - 20rem) / (48 - 20))));
+    }
+    .sous-titre{
+        font-size: calc( 1.3rem + (3 - 1.3) * ((100vw - 20rem) / (48 - 20)));
+        line-height: calc( 1.4 * (1.3rem + (3 - 1.3) * ((100vw - 20rem) / (48 - 20))));
+    }
+    .card{
+        margin-bottom: 10%;
+        .card-title{
+            line-height: 1;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+// main: style.scss
+
+
+#social{
+    background: $colorDark;
+    padding: 3% 0;
+    color: $colorLight;
+    text-align: center;
+    .sous-titre{
+        padding: .2em 0;
+    }
+    ul{
+        list-style: none;
+        display: inline-flex;
+        li{
+            margin: 0 10px;
+            a:hover{
+                color: $colorLight;
+            }
+        }
+    }
+}
+
+// MEDIUM ------------------------------
+@include responsive(M){
+    #social{
+        .sous-titre{
+            font-size: 1.7rem;
+        }
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    #social{
+        padding: 9% 0;
+    }
+}
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    #social{
+        padding: 12% 0;
+        .icons{
+            font-size: 2rem;
+        }
+    }
+}

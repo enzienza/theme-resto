@@ -1,0 +1,132 @@
+// main: style.scss
+
+/* --------------------------------------------- */
+/* ------------    SECTION SLIDE    ------------ */
+/* --------------------------------------------- */
+
+.bg-cover{
+    @include bg-cover('img/la-cigogne-d-or.jpg');
+    height: 100vh;
+}
+
+/* --- slide-left --- */
+.slide-left{
+    padding-top: 22%;
+    .big-logo{
+        text-align: center;
+        img{
+            width: 90%;
+            height: auto;
+        }
+    }
+}
+
+/* --- slide-right --- */
+.slide-right{
+    padding-top: 28%;
+    text-align: center;
+    .titre{
+        font-family: $fontSecondary;
+        color: $colorPrimary;
+        font-size: 80px;
+        line-height: 2;
+    }
+    .accroche{
+        font-family: $fontPrimary, sans-serif;
+        font-size: 50px;
+        margin-bottom: 4rem;
+        color: $colorLight;
+        line-height: 1;
+        letter-spacing: 4px;
+    }
+
+    .btn-md{
+        width: 100%;
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+        font-weight: 500;
+        @include border-radius(10px);
+        letter-spacing: 1px;
+        margin: .4rem .8rem;
+        padding: 1rem 3rem;
+        @include btn-flex-center;
+    }
+}
+
+// MEDIUM ------------------------------
+@include responsive(M){
+    .bg-cover{
+        height: 80vh;
+    }
+    .slide-right{
+        .titre{
+            font-size: 40px;
+        }
+        .accroche{
+            font-size: 22px;
+            margin-bottom: 2.5rem;
+        }
+        .btn-md{
+            font-size: 1.2rem;
+            padding: 0.6rem 3rem;
+        }
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    .slide-left{
+        padding-top: 20%;
+        .big-logo img{
+            width: 50%;
+        }
+    }
+    .slide-right{
+        padding-top: 1%;
+        .titre{
+            font-size: 50px;
+        }
+        .accroche{
+            font-size: 30px;
+            margin-bottom: 1.3rem;
+        }
+        .btn-md{
+            font-size: 1.2rem;
+            margin: .4rem 0;
+            padding: 0.8rem 2rem;
+
+        }
+
+    }
+}
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    .slide-left{
+        padding-top: 37%;
+        .big-logo img{
+            width: 60%;
+        }
+    }
+    .slide-right{
+        padding-top: 7%;
+        .titre{
+            font-size: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        .accroche{
+            font-size: 20px;
+            margin-bottom: 3rem;
+        }
+        .btn-md{
+            font-size: 1.4rem;
+            margin: .4rem 0;
+            padding: 1rem 1rem;
+            white-space: normal;
+            line-height: 1.4;
+
+        }
+
+    }
+}

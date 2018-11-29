@@ -1,0 +1,103 @@
+// main: style.scss
+
+//#event{
+
+.bg-event{
+    @include bg-img('img/bg-christmas-1.jpg');
+    padding: 8% 0 3%;
+    height: 50vh;
+    .event-content{
+        text-align: center;
+        font-family: $fontSecondary;
+    }
+    .text-event{
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+        padding: 0 15% 1%;
+        line-height: 1.2;
+    }
+    .btn{
+        &-left{
+            text-align: right;
+        }
+        &-right{
+            text-align: left;
+        }
+        &-full-color{
+            border: 2px solid #fbdd98;
+            color: #fff;
+            background-color: #fbdd98;
+            &:hover{
+                color: $colorLight;
+                background-color: $colorPrimary;
+                border-color: $colorPrimary;
+            }
+        }
+        width: 50%;
+        line-height: 2;
+        margin-top: 6%;
+        margin-bottom: 6%;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+// MEDIUM ------------------------------
+@include responsive(M){
+    .bg-event{
+        height: 40vh;
+        .text-event{
+            font-size: 2rem;
+            letter-spacing: 3px;
+            padding: 3% 14% 4%;
+        }
+        .btn{
+            width: 70%;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+        }
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    .bg-event{
+        height: 60vh;
+        .text-event{
+            font-size: 2rem;
+            letter-spacing: 3px;
+            padding: 6% 11% 7%;
+        }
+        .btn{
+            &-left, &-right{
+                text-align: justify;
+            }
+            width: 100%;
+            margin: 3% 0;
+            letter-spacing: 6px;
+        }
+    }
+}
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    .bg-event{
+        height: 45vh;
+        .text-event{
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            padding: 9% 5%;
+        }
+        .btn{
+            &-left, &-right{
+                text-align: justify;
+            }
+            width: 100%;
+            font-size: 1.2rem;
+            margin: 3% 0;
+            letter-spacing: 3px;
+        }
+    }
+
+}

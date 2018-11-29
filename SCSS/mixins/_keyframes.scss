@@ -1,0 +1,26 @@
+// main: ../_mixins.scss
+
+
+// KEYFRAMES --------------------------------------------------------------
+
+@mixin keyframes($name) {
+
+    // Prefix : Safari & Chrome
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    // Prefix : Mozila
+    //@-moz-keyframes #{$name} {
+    //    @content;
+    //}
+
+    // Prefix : Internet Explorer
+    //@-ms-keyframes #{$name} {
+    //    @content;
+    //}
+
+    @keyframes #{$name} {
+        @content;
+    }
+}

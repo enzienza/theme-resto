@@ -1,0 +1,140 @@
+// main: style.scss
+
+/* -------------------------------------------- */
+/* ---------------    NAVBAR    --------------- */
+/* -------------------------------------------- */
+
+.navbar {
+    height: 80px;
+    background-color: transparent;
+}
+
+.navbar-expand-md .navbar-brand {
+    margin-top: 10px;
+    color: $colorLight;
+    &:hover {
+        color: $colorPrimary;
+    }
+    .logo{
+        margin: 0;
+        padding: 0;
+        height: auto;
+        position: absolute;
+        top: 26px;
+        img{
+            width: 100px;
+        }
+    }
+}
+.navbar-nav .current-menu-item{
+    a{
+        &::before {
+            left: 0;
+            right: 60%;
+            @include transition-nav-item;
+        }
+        &::after {
+            right: 0;
+            left: 60%;
+            @include transition-nav-item;;
+        }
+    }
+}
+.navbar-nav .menu-item {
+    position: relative;
+    a {
+        display: block;
+        color: $colorLight;
+        font-family: $fontSecondary, sans-serif;
+        text-transform: uppercase;
+        margin: 20px 5px 15px 5px;
+        text-align: center;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        font-size: medium;
+        &:hover {
+            color: $colorLight;
+        }
+        &::before {
+            top: 15px;
+        }
+        &:hover::before, &:active::before {
+            left: 0;
+            right: 60%;
+            @include transition-nav-item;
+        }
+    }
+    a {
+        &::after {
+            top: auto;
+            bottom: 10px;
+        }
+        &:hover::after, &:active::after {
+            right: 0;
+            left: 60%;
+            @include transition-nav-item;
+        }
+    }
+    a {
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+        }
+    }
+}
+
+.navbar-expand-md .navbar-nav a {
+    &::after, &::before {
+        background-color: $colorPrimary;
+    }
+}
+
+.solid{
+    background-color: $colorDark;
+    @include menu-bg-color;
+    @include shadow-menu;
+}
+
+// MEDIUL ------------------------------
+@include responsive(M){
+    .navbar-nav .menu-item a{
+        font-size: 0.7rem;
+        margin: 15px 0 10px 0;
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    .navbar{
+        height: auto;
+        background-color: $colorDark;
+    }
+    .navbar-expand-md .navbar-brand {
+        .logo{
+            top: 12px;
+        }
+    }
+    .navbar-nav .page_item a {
+        line-height: 2;
+        font-size: larger;
+    }
+}
+
+
+// EXTRA SMALL ------------------------------
+@include responsive(XS){
+    .navbar{
+        height: auto;
+        background-color: $colorDark;
+    }
+    .navbar-expand-md .navbar-brand {
+        .logo{
+            top: 12px;
+        }
+    }
+    .navbar-nav .page_item a {
+        line-height: 2;
+        font-size: larger;
+    }
+}
