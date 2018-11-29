@@ -62,24 +62,29 @@ if ( ! function_exists( 'cigognedor_styles_scripts' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'cigognedor_style_scripts' );
 
-/* Hide Version Number */
-/* Hide WP version strings from scripts and styles
-* @return {string} $src
-* @filter script_loader_src
-* @filter style_loader_src
-*/
+
+
+/* ---------------------------------------------------- */
+/* --------------    Hiden Version WP    -------------- */
+/* ---------------------------------------------------- */
+
+//	Securité : Cacher la verion du WordPress utilisé
+//  @return {string} $src
+//  @filter script_loader_src
+//  @filter style_loader_src
+
 function fb_remove_wp_version_strings( $src ) {
-global $wp_version;
-parse_str(parse_url($src, PHP_URL_QUERY), $query);
-if ( !empty($query['ver']) && $query['ver'] === $wp_version ) {
-$src = remove_query_arg('ver', $src);
-}
-return $src;
+	global $wp_version;
+	parse_str(parse_url($src, PHP_URL_QUERY), $query);
+	if ( !empty($query['ver']) && $query['ver'] === $wp_version ) {
+		$src = remove_query_arg('ver', $src);
+	}
+	return $src;
 }
 add_filter( 'script_loader_src', 'fb_remove_wp_version_strings' );
 add_filter( 'style_loader_src', 'fb_remove_wp_version_strings' );
 /* Hide WP version strings from generator meta tag */
 function fb_remove_version() {
-return '';
+	return '';
 }
 add_filter('the_generator', 'fb_remove_version');
