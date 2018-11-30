@@ -5,8 +5,20 @@
 /* --------------------------------------------- */
 
 .bg-cover{
-    @include bg-cover('img/la-cigogne-d-or.jpg');
+    //@include bg-cover('img/la-cigogne-d-or.jpg');
+    @include bg-cover;
     height: 100vh;
+}
+
+.img-cover{
+    img{
+        background-position: 50% 50%;
+        background-size: cover;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+        background-attachment: fixed;
+    }
 }
 
 /* --- slide-left --- */

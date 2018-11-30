@@ -104,5 +104,17 @@ add_filter('the_generator', 'fb_remove_version');
 // CPT : Intro
 //require get_template_directory() .'/functions/custom-intro.php';
 
-//	CPT : Accueil
-require get_template_directory() .'/functions/custom-accueil.php';
+//	CPT : Cover ( homepage -> section #slide )
+require get_template_directory() .'/functions/custom-cover.php';
+
+//	CPR : Accroche (homepage -> section #intro )
+
+
+// CPT : Buffet ( homepage -> section #buffet )
+// require get_template_directory() .'/functions/custom-buffet.php';
+
+
+// CPT : Tarif ( homepage -> section #tarif )
+
+
+//	CPT : Contacct

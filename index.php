@@ -4,26 +4,45 @@
 <main>
 
     <!-- DEBUT : section #slide -->
+
+    <?php
+        wp_reset_postdata();
+
+        $args = array(
+            'post_type' => 'covers',    // nom du CPT
+            'posts_per_page' => 1,      // limite
+            'orderby' => 'id',
+            'meta_key' => 'sticky',     // uniquement ceux qui on la mise en avant en 'oui'
+            'meta_value' => 'oui'
+        );
+        $my_query = new WP_query($args);
+        if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+     ?>
     <section id="slide" class="container-fuid bg-cover">
+        <div class="img-cover">
+            <?php the_post_thumbnail(); ?>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-12 slide-left">
                     <div class="big-logo">
-                        <img src="img/logo_bl.png" alt="La Cigogne d'Or de Waremme - Restaurant chinois - buffet wok à volonter">
+                        <!-- <img src="img/logo_bl.png" alt="La Cigogne d'Or de Waremme - Restaurant chinois - buffet wok à volonter"> -->
+                        <img src="<?php echo get_template_directory_uri().'/img/logo_bl.png' ?>" alt="La Cigogne d'Or de Waremme - Restaurant chinois - buffet wok à volonter">
                     </div><!-- ./ big-logo-->
                 </div><!-- ./ slide-left -->
                 <div class="col-md-7 col-12 slide-right">
-                    <div class="titre">La cigogne d'or</div><!-- ./ titre -->
-                    <div class="accroche">Buffer wok à volonter</div><!-- ./ accroche -->
+                    <div class="titre"><?php the_title(); ?></div><!-- ./ titre -->
+                    <div class="accroche"><?php the_content(); ?></div><!-- ./ accroche -->
                     <div class="bouton">
-                        <a href="#" class="btn btn-outline btn-md">
-                            Découvrez nos menus de fins d'année
+                        <a href="<?php echo get_post_meta($post->ID, 'lien', true); ?>" class="btn btn-outline btn-md">
+                            <?php echo get_post_meta($post->ID, 'text', true); ?>
                         </a>
                     </div><!-- ./ bouton -->
                 </div><!-- slide-right -->
             </div><!-- ./ row -->
         </div><!-- ./ container -->
     </section><!-- ./ section #slide -->
+    <?php endwhile; endif;  wp_reset_postdata(); ?>
 
     <!-- DEBUT : section #intro -->
     <section id="intro" class="container-fluid bg-color-gradient">
