@@ -103,3 +103,6 @@ add_filter('the_generator', 'fb_remove_version');
 
 // CPT : Intro
 //require get_template_directory() .'/functions/custom-intro.php';
+
+//	CPT : Accueil
+require get_template_directory() .'/functions/custom-accueil.php';
