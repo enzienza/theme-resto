@@ -32,26 +32,15 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-example">
-                    <ul class="nav navbar-nav">
-                        <li class="menu-item current-menu-item">
-                            <a class="nav-link" href="#">Accueil</a>
-                        </li> <!-- ./ nav-link -->
-                        <li class="menu-item">
-                            <a class="nav-link" href="#">Buffet</a>
-                        </li> <!-- ./ nav-link -->
-                        <li class="menu-item">
-                            <a class="nav-link" href="#">Carte</a>
-                        </li> <!-- ./ nav-link -->
-                        <li class="menu-item">
-                            <a class="nav-link" href="#">Emporter</a>
-                        </li> <!-- ./ nav-link -->
-                        <li class="menu-item">
-                            <a class="nav-link" href="#">Evènement</a>
-                        </li> <!-- ./ nav-link -->
-                        <li class="menu-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li> <!-- ./ nav-link -->
-                    </ul> <!-- ./ navbar-nav -->
+                    <?php /* Main Navigation */
+                        wp_nav_menu( array(
+                          'theme_location' => 'header',
+                          'depth'          => 2,
+                          'container'      => 'ul',
+                          'menu_class'     => 'nav navbar-nav'
+                          )
+                        );
+                    ?>
                 </div> <!-- ./ navbar-collapse -->
 
             </div> <!-- ./ container -->
