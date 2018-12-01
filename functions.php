@@ -108,7 +108,7 @@ add_filter('the_generator', 'fb_remove_version');
 require get_template_directory() .'/functions/custom-cover.php';
 
 //	CPR : Accroche (homepage -> section #intro )
-
+require get_template_directory() .'/functions/custom-catchphrase.php';
 
 // CPT : Buffet ( homepage -> section #buffet )
 // require get_template_directory() .'/functions/custom-buffet.php';

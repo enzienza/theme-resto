@@ -61,11 +61,26 @@
     <section id="intro" class="container-fluid bg-color-gradient">
         <div class="row content-intro">
             <div class="col-lg-3 col-md-2 col-12 fly-left"></div>
+            <?php
+                wp_reset_postdata();
+
+                $args = array(
+                    'post_type' => 'catchphrases',    // nom du CPT
+                    'posts_per_page' => 1,      // limite
+                    'orderby' => 'id',
+                    'meta_key' => 'sticky',     // uniquement ceux qui on la mise en avant en 'oui'
+                    'meta_value' => 'oui'
+                );
+                $my_query = new WP_query($args);
+                if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+             ?>
             <div class="col-md-6 col-12 align-self-center">
-                <p class="txt-intro">
-                    Venez passer un moment agréable dans un cadre familial à la Cigogne d’Or
-                </p><!-- ./ txt-intro -->
+
+                <?php the_content(); ?>
+
+
             </div><!-- ./ col .align-self-center -->
+            <?php endwhile; endif;  wp_reset_postdata(); ?>
             <div class="col-lg-3 col-md-2 col-12 fly-right"></div>
         </div><!-- ./ row -->
     </section><!-- ./ section #intro -->

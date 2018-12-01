@@ -27,7 +27,7 @@
         }
     }
 
-    .txt-intro{
+    p{
         text-align: center;
         font-size: 35px;
         font-family: $fontSecondary;
@@ -45,7 +45,7 @@
     }
 
     .content-intro{
-        .txt-intro{
+        p{
             font-size: medium;
             padding: 10% 0;
             margin-top: 3%;
@@ -81,7 +81,7 @@
             }
         }
 
-        .txt-intro{
+        p{
             font-size: large;
             padding: 1% 16%;
             margin-top: 0;
@@ -106,7 +106,7 @@
             }
         }
 
-        .txt-intro{
+        p{
             font-size: medium;
         }
     }

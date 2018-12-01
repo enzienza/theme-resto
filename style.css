@@ -6500,7 +6500,7 @@ section:after {
   padding-left: 0;
 }
 
-.content-intro .txt-intro {
+.content-intro p {
   text-align: center;
   font-size: 35px;
   font-family: "Libre Baskerville", serif;
@@ -6514,7 +6514,7 @@ section:after {
     height: 170px;
     padding-top: 2%;
   }
-  .content-intro .txt-intro {
+  .content-intro p {
     font-size: medium;
     padding: 10% 0;
     margin-top: 3%;
@@ -6545,7 +6545,7 @@ section:after {
     height: 60px;
     max-width: 120px;
   }
-  .content-intro .txt-intro {
+  .content-intro p {
     font-size: large;
     padding: 1% 16%;
     margin-top: 0;
@@ -6563,7 +6563,7 @@ section:after {
   .content-intro .fly-left, .content-intro .fly-right {
     display: none;
   }
-  .content-intro .txt-intro {
+  .content-intro p {
     font-size: medium;
   }
 }
