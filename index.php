@@ -34,9 +34,22 @@
                     <div class="titre"><?php the_title(); ?></div><!-- ./ titre -->
                     <div class="accroche"><?php the_content(); ?></div><!-- ./ accroche -->
                     <div class="bouton">
-                        <a href="<?php echo get_post_meta($post->ID, 'lien', true); ?>" class="btn btn-outline btn-md">
+
+                        <?php $btn_actif = get_post_meta($post->ID, 'btn_actif', 'oui', true); ?>
+                        <a href="<?php echo get_post_meta($post->ID, 'lien', true); ?>" class="btn btn-md">
                             <?php echo get_post_meta($post->ID, 'text', true); ?>
                         </a>
+
+                        <script type="text/javascript">
+                            // Ajouté la class "btn-outline"
+                            // Si btn_actif == oui
+                            <?php if (!empty ($btn_actif == 'oui' )){?>
+                                jQuery(document).ready(function($){
+                                    $('.btn').addClass('btn-outline');
+                                });
+                            <?php } ?>
+                        </script>
+
                     </div><!-- ./ bouton -->
                 </div><!-- slide-right -->
             </div><!-- ./ row -->
