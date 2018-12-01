@@ -137,41 +137,48 @@
         <div class="row">
             <div class="col-lg-8 col-12 tarif-left">
                 <div class="card">
+                    <?php
+                        wp_reset_postdata();
+
+                        $args = array(
+                            'post_type' => 'tarifbuffets',
+                            'posts_per_page' => -1,
+                            'orderby' => 'id',
+                            'order' => 'ASC'
+                        );
+                        $my_query = new WP_query($args);
+                        if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+                     ?>
+
                     <!-- debut -> item-card -->
                     <div class="item-card">
-                        <h3 data-accordion-element-trigger>Mardi au Samedi MIDI</h3>
+                        <h3 data-accordion-element-trigger><?php the_title(); ?></h3>
                         <div data-accordion-element-content class="content">
                             <div class="formule row">
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Sans boissons</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more"></sub>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'SB_prix', true); ?></div>
+                                    <sub class="more"><?php echo get_post_meta($post->ID, 'SB_comporte', true); ?></sub>
                                 </div><!-- ./ item-formule -->
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Boissons comprises *</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        * soft et vin à volontés
-                                    </sub>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BC_prix', true); ?></div>
+                                    <sub class="more">* <?php echo get_post_meta($post->ID, 'BC_comporte', true); ?></sub>
                                 </div><!-- ./ item-formule -->
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Full boissons **</div>
-                                    <div class="prix">19,90€</div>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BF_prix', true); ?></div>
                                     <sub class="more">
-                                        ** 1 Apéro/personne
-                                        (Porto, Martini, Gancia, Apéro Maison,
-                                        Jus de Litchi, Pineau, Kir, Kwei Hua, Chefoo et Cava)
-                                        + soft + vin
-                                        + 1 café ou thé/personne
+                                        ** <?php echo get_post_meta($post->ID, 'BF_comporte', true); ?><br />
                                         <strong>! suppl. de 3€ pour autres apéritifs</strong>
                                     </sub>
                                 </div><!-- ./ item-formule -->
@@ -179,174 +186,7 @@
                         </div><!-- ./ content -->
                     </div><!-- ./ item-card -->
 
-                    <!-- debut -> item-card -->
-                    <div class="item-card">
-                        <h3 data-accordion-element-trigger>Mardi au Jeudi Soir</h3>
-                        <div data-accordion-element-content class="content">
-                            <div class="formule row">
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Sans boissons</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more"></sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Boissons comprises *</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        * soft et vin à volontés
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Full boissons **</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        ** 1 Apéro/personne
-                                        (Porto, Martini, Gancia, Apéro Maison,
-                                        Jus de Litchi, Pineau, Kir, Kwei Hua, Chefoo et Cava)
-                                        + soft + vin
-                                        + 1 café ou thé/personne
-                                        <strong>! suppl. de 3€ pour autres apéritifs</strong>
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                            </div><!-- ./ formule -->
-                        </div><!-- ./ content -->
-                    </div><!-- ./ item-card -->
-
-                    <!-- debut -> item-card -->
-                    <div class="item-card">
-                        <h3 data-accordion-element-trigger>Vendredi SOIR</h3>
-                        <div data-accordion-element-content class="content">
-                            <div class="formule row">
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Sans boissons</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more"></sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Boissons comprises *</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        * soft et vin à volontés
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Full boissons **</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        ** 1 Apéro/personne
-                                        (Porto, Martini, Gancia, Apéro Maison,
-                                        Jus de Litchi, Pineau, Kir, Kwei Hua, Chefoo et Cava)
-                                        + soft + vin
-                                        + 1 café ou thé/personne
-                                        <strong>! suppl. de 3€ pour autres apéritifs</strong>
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                            </div><!-- ./ formule -->
-                        </div><!-- ./ content -->
-                    </div><!-- ./ item-card -->
-
-                    <!-- debut -> item-card -->
-                    <div class="item-card">
-                        <h3 data-accordion-element-trigger>Samedi SOIR</h3>
-                        <div data-accordion-element-content class="content">
-                            <div class="formule row">
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Sans boissons</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more"></sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Boissons comprises *</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        * soft et vin à volontés
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Full boissons **</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        ** 1 Apéro/personne
-                                        (Porto, Martini, Gancia, Apéro Maison,
-                                        Jus de Litchi, Pineau, Kir, Kwei Hua, Chefoo et Cava)
-                                        + soft + vin
-                                        + 1 café ou thé/personne
-                                        <strong>! suppl. de 3€ pour autres apéritifs</strong>
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                            </div><!-- ./ formule -->
-                        </div><!-- ./ content -->
-                    </div><!-- ./ item-card -->
-
-                    <!-- debut -> item-card -->
-                    <div class="item-card">
-                        <h3 data-accordion-element-trigger>Dimanche et jour férié MIDI et SOIR</h3>
-                        <div data-accordion-element-content class="content">
-                            <div class="formule row">
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Sans boissons</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more"></sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Boissons comprises *</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        * soft et vin à volontés
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                                <div class="col-md-4 col-12 item-formule">
-                                    <div class="icon">
-                                        <img src="img/icon_repas.png" alt="">
-                                    </div>
-                                    <div class="titre">Full boissons **</div>
-                                    <div class="prix">19,90€</div>
-                                    <sub class="more">
-                                        ** 1 Apéro/personne
-                                        (Porto, Martini, Gancia, Apéro Maison,
-                                        Jus de Litchi, Pineau, Kir, Kwei Hua, Chefoo et Cava)
-                                        + soft + vin
-                                        + 1 café ou thé/personne
-                                        <strong>! suppl. de 3€ pour autres apéritifs</strong>
-                                    </sub>
-                                </div><!-- ./ item-formule -->
-                            </div><!-- ./ formule -->
-                        </div><!-- ./ content -->
-                    </div><!-- ./ item-card -->
-
+                    <?php endwhile; endif;  wp_reset_postdata(); ?>
                 </div><!-- ./ card -->
             </div><!-- ./ tarif-left -->
             <div class="col-lg-4 col-12 tarif-right">

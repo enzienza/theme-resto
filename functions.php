@@ -113,6 +113,8 @@ require get_template_directory() .'/functions/custom-catchphrase.php';
 // CPT : Buffet ( homepage -> section #buffet )
 // require get_template_directory() .'/functions/custom-buffet.php';
 
+// CPT : Tarif-buffet ( homepage -> section #tarif )
+require get_template_directory() .'/functions/custom-tarifbuffet.php';
 
 // CPT : Tarif ( homepage -> section #tarif )
 
