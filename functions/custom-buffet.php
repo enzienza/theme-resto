@@ -43,7 +43,7 @@ function CPT_buffets() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 3,
+            'menu_position' => 4,
             'menu_icon'=>'dashicons-pressthis',
             'supports' => array(
                 'title',

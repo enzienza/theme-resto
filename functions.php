@@ -117,4 +117,14 @@ require get_template_directory() .'/functions/custom-tarifbuffet.php';
 // CPT : Tarif-speciaux ( homepage -> section #tarif )
 require get_template_directory() .'/functions/custom-tarifspeciaux.php';
 
-//	CPT : Contacct
+// CPT : Menu ( menu -> resto & emporter )
+require get_template_directory() .'/functions/custom-menus.php';
+
+// CPT : carte ( carte -> resto & emporter )
+//require get_template_directory() .'/functions/custom-cartes.php';
+
+// CPT : evenement
+//require get_template_directory() .'/functions/custom-event.php';
+
+// CPT : contact ( homepage -> section #contact & contact[page] )
+//require get_template_directory() .'/functions/custom-contact.php';
