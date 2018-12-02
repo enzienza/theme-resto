@@ -2,7 +2,7 @@
 /*
 * ./ functions/custom-tarifbuffet.php
 *
-*  Descrition : Création d'un CPT pour gerer la phrase d'accroche de la section #intro
+*  Descrition : Création d'un CPT pour gerer les tarifs du buffet de la section #tarif
 *
 *  Plan du fichier :
 *       1 - CPT_tarifbuffets

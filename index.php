@@ -89,45 +89,41 @@
     <section id="buffet" class="container">
         <h1 class="titre-h1">Buffet</h1>
         <div class="row">
+            <?php
+                wp_reset_postdata();
+
+                $args = array(
+                    'post_type' => 'buffets',    // nom du CPT
+                    'posts_per_page' => 1,      // limite
+                    'orderby' => 'id',
+                    'meta_key' => 'sticky',     // uniquement ceux qui on la mise en avant en 'oui'
+                    'meta_value' => 'oui'
+                );
+                $my_query = new WP_query($args);
+                if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+             ?>
             <div class="col-lg-6 col-12 box-left hidden">
                 <div class="description-buffet">
-
-                    Notre buffet se compose d'une vingtaines d'entrées froides,
-                    d'une trentaines d'entrées chaudes (en sauce, à la vapeur et frites),
-                    ainsi que deux types de potages.<br /><br />
-
-                    Pour le plat principal, vous avez la possibilité de composer vous-même
-                    votre assiette en sélectionnant les aliments désirés parmi notre sélection
-                    de viandes, poissons frais et de légumes. Nous vous proposons deux type
-                    de cuisson : le Wok et le Tipan Yaki préparés par notre chef.
-                    Le riz et les nouilles pour accompagner votre plat, restent
-                    à votre disposition dans le buffet chaud.<br /><br />
-
-                    Nous vous proposons également un large choix de desserts, vous y
-                    retrouverez des fruits frais, glaces, tartes, mousse au chocolat,
-                    crème brûlée et bien d'autres encore...<br /><br />
-
-                    Sans oublier nos beignets de fruits chauds que vous pouvez
-                    commander à nos serveurs.
-
+                    <?php the_content(); ?>
                 </div><!-- ./ description-buffet -->
             </div><!-- ./ box-left -->
             <div class="col-lg-6 col-12 box-right hidden">
                 <div class="row">
                     <div class="col-6 img-buffet">
-                        <img src="img/buffet-1.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri().'/img/buffet-1.jpg' ?>" alt="">
                     </div><!-- ./ img-buffet -->
                     <div class="col-6 img-buffet">
-                        <img src="img/buffet-2.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri().'/img/buffet-2.jpg' ?>" alt="">
                     </div><!-- ./ img-buffet -->
                     <div class="col-6 img-buffet">
-                        <img src="img/buffet-3.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri().'/img/buffet-3.jpg' ?>" alt="">
                     </div><!-- ./ img-buffet -->
                     <div class="col-6 img-buffet">
-                        <img src="img/buffet-1.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri().'/img/buffet-1.jpg' ?>" alt="">
                     </div><!-- ./ img-buffet -->
                 </div><!-- ./ row -->
             </div><!-- ./ box-right -->
+            <?php endwhile; endif;  wp_reset_postdata(); ?>
         </div><!-- ./ row -->
     </section><!-- ./ section #buffet -->
 

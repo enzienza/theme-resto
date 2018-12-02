@@ -101,8 +101,6 @@ add_filter('the_generator', 'fb_remove_version');
 //	Cacher tel ou tel element du dashboard du back-end
 //require get_template_directory() .'/functions/custom-general.php';
 
-// CPT : Intro
-//require get_template_directory() .'/functions/custom-intro.php';
 
 //	CPT : Cover ( homepage -> section #slide )
 require get_template_directory() .'/functions/custom-cover.php';
@@ -111,7 +109,7 @@ require get_template_directory() .'/functions/custom-cover.php';
 require get_template_directory() .'/functions/custom-catchphrase.php';
 
 // CPT : Buffet ( homepage -> section #buffet )
-// require get_template_directory() .'/functions/custom-buffet.php';
+require get_template_directory() .'/functions/custom-buffet.php';
 
 // CPT : Tarif-buffet ( homepage -> section #tarif )
 require get_template_directory() .'/functions/custom-tarifbuffet.php';
