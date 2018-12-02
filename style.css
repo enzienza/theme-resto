@@ -6972,15 +6972,17 @@ section:after {
   border-radius: 0 0 calc(.50rem - 1px) calc(.50rem - 1px);
 }
 
-.tarif-right .table th, .tarif-right .table td {
-  padding: .55rem;
-}
-
 .tarif-right .avis {
   font-family: "Libre Baskerville", serif;
   font-weight: bolder;
   text-align: center;
   padding: 10% 0;
+}
+
+.tarif-right .table-tarif .table-item {
+  border: 1px solid #dee2e6;
+  padding: .75rem;
+  vertical-align: top;
 }
 
 @media only screen and (min-width: 768px) and (max-width: calc(992px - 1px)) {

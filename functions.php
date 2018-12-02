@@ -116,7 +116,7 @@ require get_template_directory() .'/functions/custom-catchphrase.php';
 // CPT : Tarif-buffet ( homepage -> section #tarif )
 require get_template_directory() .'/functions/custom-tarifbuffet.php';
 
-// CPT : Tarif ( homepage -> section #tarif )
-
+// CPT : Tarif-speciaux ( homepage -> section #tarif )
+require get_template_directory() .'/functions/custom-tarifspeciaux.php';
 
 //	CPT : Contacct

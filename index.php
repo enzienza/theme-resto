@@ -196,27 +196,26 @@
                             <h3 class="card-title">Prix spéciaux</h3>
                         </div><!-- ./ card-header -->
                         <div class="card-body">
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <td>0 à 3 ans</td>
-                                        <td>Gratuit</td>
-                                    </tr><!-- ./ tr -->
-                                    <tr>
-                                        <td>4 à 11 ans</td>
-                                        <td>Moitié prix</td>
-                                    </tr><!-- ./ tr -->
-                                    <tr>
-                                        <td>A partir de 12 ans</td>
-                                        <td>Prix adulte</td>
-                                    </tr><!-- ./ tr -->
-                                    <tr>
-                                        <td>A partir de 65 ans</td>
-                                        <td>Moitié prix *</td>
-                                    </tr><!-- ./ tr -->
-                                </tbody><!-- ./ tbody -->
-                            </table><!-- ./ table -->
-                            <sub>* sauf vendredi soir, samedi soir et jours fériés !</sub>
+                            <?php
+                                wp_reset_postdata();
+
+                                $args = array(
+                                    'post_type' => 'tarifspeciaus',
+                                    'posts_per_page' => -1,
+                                    'orderby' => 'id',
+                                    'order' => 'ASC'
+                                );
+                                $my_query = new WP_query($args);
+                                if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+                             ?>
+
+                             <div class="row no-gutters table-tarif">
+                                 <div class="col-6 table-item"><?php the_title(); ?></div>
+                                 <div class="col-6 table-item"><?php echo get_post_meta($post->ID, 'prix_special', true); ?></div>
+                             </div>
+                            <sub><?php echo get_post_meta($post->ID, 'remarque', true); ?></sub>
+
+                            <?php endwhile; endif;  wp_reset_postdata(); ?>
                         </div><!-- ./ card-body -->
 
                     </div><!-- ./ card -->
