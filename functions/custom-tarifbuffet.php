@@ -45,7 +45,7 @@ function CPT_tarifbuffets() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 5,
+            'menu_position' => 6,
             'menu_icon'=>'dashicons-excerpt-view',
             'supports' => array(
                 'title',

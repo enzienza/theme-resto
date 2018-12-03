@@ -44,7 +44,7 @@ function CPT_covers() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 2,
+            'menu_position' => 3,
             'menu_icon'=>'dashicons-megaphone',
             'supports' => array(
                 'title',
@@ -74,7 +74,7 @@ function add_metabox_sticky_covers(){
 // 2 -  construction de la metabox
 
 function MB_sticky_covers($POST){
-    wp_nonce_field(basename(__FILE__), 'metabox_sticky_covers');
+    wp_nonce_field(basename(__FILE__), 'metabox_sticky_covers_nonce');
     $sticky = get_post_meta($POST->ID, 'sticky', true);
     ?>
         <p>

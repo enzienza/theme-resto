@@ -43,7 +43,7 @@ function CPT_catchphrases() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 3,
+            'menu_position' => 4,
             'menu_icon'=>'dashicons-format-quote',
             'supports' => array(
                 'title',
@@ -72,7 +72,7 @@ function add_metabox_sticky_catchphrases(){
 // 2 -  construction de la metabox
 
 function MB_sticky_catchphrases($POST){
-    wp_nonce_field(basename(__FILE__), 'metabox_sticky_catchphrases');
+    wp_nonce_field(basename(__FILE__), 'metabox_sticky_catchphrases_nonce');
     $sticky = get_post_meta($POST->ID, 'sticky', true);
     ?>
         <p>

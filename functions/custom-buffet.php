@@ -43,7 +43,7 @@ function CPT_buffets() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 4,
+            'menu_position' => 5,
             'menu_icon'=>'dashicons-pressthis',
             'supports' => array(
                 'title',
@@ -73,7 +73,7 @@ function add_metabox_sticky_buffets(){
 // 2 -  construction de la metabox
 
 function MB_sticky_buffets($POST){
-    wp_nonce_field(basename(__FILE__), 'metabox_sticky_buffets');
+    wp_nonce_field(basename(__FILE__), 'metabox_sticky_buffets_nonce');
     $sticky = get_post_meta($POST->ID, 'sticky', true);
     ?>
         <p>

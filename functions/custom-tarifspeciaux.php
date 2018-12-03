@@ -43,7 +43,7 @@ function CPT_tarifspeciaus() {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 6,
+            'menu_position' => 7,
             'menu_icon'=>'dashicons-feedback',
             'supports' => array(
                 'title',

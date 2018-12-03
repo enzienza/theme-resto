@@ -58,6 +58,7 @@ if ( ! function_exists( 'cigognedor_styles_scripts' ) ) {
 
 		// inclus
 		wp_enqueue_style( 'style', get_template_directory_uri().'/style.min.css');
+		wp_enqueue_style('metabox-style', get_template_directory().'/css/meta-box-styles.css');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cigognedor_style_scripts' );
@@ -118,13 +119,13 @@ require get_template_directory() .'/functions/custom-tarifbuffet.php';
 require get_template_directory() .'/functions/custom-tarifspeciaux.php';
 
 // CPT : Menu ( menu -> resto & emporter )
-require get_template_directory() .'/functions/custom-menus.php';
+require get_template_directory() .'/functions/custom-servicemenus.php';
 
 // CPT : carte ( carte -> resto & emporter )
-//require get_template_directory() .'/functions/custom-cartes.php';
+require get_template_directory() .'/functions/custom-servicecartes.php';
 
 // CPT : evenement
 //require get_template_directory() .'/functions/custom-event.php';
 
 // CPT : contact ( homepage -> section #contact & contact[page] )
-//require get_template_directory() .'/functions/custom-contact.php';
+require get_template_directory() .'/functions/custom-contact.php';
