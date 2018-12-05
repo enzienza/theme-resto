@@ -1,49 +1,49 @@
 <?php
 /*
-* ./ functions/custom-contact.php
+* ./ functions/custom-info.php
 *
-*  Descrition : Création d'un CPT pour gerer les contacts (resto & emporter)
+*  Descrition : Création d'un CPT pour gerer les infos (resto & emporter)
 *
 *  Plan du fichier :
-*       1 - CPT_contacts
+*       1 - CPT_infos
 *
 */
 
 
 /* ---------------------------------------------------------- */
-/* --------   CPT contact (section contact)   ------- */
+/* --------   CPT info (section info)   ------- */
 /* ---------------------------------------------------------- */
 
-function CPT_contacts() {
+function CPT_infos() {
     register_post_type(
-        'contacts', array(
-            'label' => 'Contact',
+        'infos', array(
+            'label' => 'Info',
             'labels' => array(
-                'name' => 'Contact',
-                'singuar_name' => 'contact',
-                'contact_name' => 'contact',
-                'name_admin_bar' =>'contact',
+                'name' => 'Info',
+                'singuar_name' => 'info',
+                'info_name' => 'info',
+                'name_admin_bar' =>'info',
                 'add_new' => 'Ajouter',
-                'add_new_item' => 'Ajouter un contact',
-                'new_item' => 'Nouveau contact',
-                'edit_item' => 'Editer un contact',
-                'view_item' => 'Voir le contact',
-                'all_items' => 'Toutes les contacts',
-                'search_items' => 'Rechercher parmi les contacts',
-                'not_found' => 'Pas de contact trouvées',
-                'not_fount_in_trash' => 'Pas de contact dans la corbeille'
+                'add_new_item' => 'Ajouter un info',
+                'new_item' => 'Nouveau info',
+                'edit_item' => 'Editer un info',
+                'view_item' => 'Voir le info',
+                'all_items' => 'Toutes les infos',
+                'search_items' => 'Rechercher parmi les infos',
+                'not_found' => 'Pas de info trouvées',
+                'not_fount_in_trash' => 'Pas de info dans la corbeille'
             ),
             'public' => true,
-            'show_in_contact' => true,
+            'show_in_info' => true,
             'query_var' => true,
             'rewrite' => array(
-                'slug' => 'contacts'
+                'slug' => 'infos'
             ),
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
             'menu_position' => 11,
-            'menu_icon'=>'dashicons-location-alt',
+            'menu_icon'=>'dashicons-info',
             'supports' => array(
                 'title',
             )
@@ -51,26 +51,26 @@ function CPT_contacts() {
     );
 }
 
-add_action('init',  'CPT_contacts');
+add_action('init',  'CPT_infos');
 
 
 /* ---------------------------------------------------------------- */
-/* ------  METABOX  Pour sticky contacts (mise en avant)  ----- */
+/* ------  METABOX  Pour sticky infos (mise en avant)  ----- */
 /* ---------------------------------------------------------------- */
 
 
 // 1 - initialisation de la metabox
 
-add_action('add_meta_boxes', 'add_metabox_sticky_contacts');
+add_action('add_meta_boxes', 'add_metabox_sticky_infos');
 
-function add_metabox_sticky_contacts(){
-    add_meta_box('id_metabox_sticky_contacts', 'Mise en avant' , 'MB_sticky_contacts', 'contacts', 'side', 'high');
+function add_metabox_sticky_infos(){
+    add_meta_box('id_metabox_sticky_infos', 'Mise en avant' , 'MB_sticky_infos', 'infos', 'side', 'high');
 }
 
 // 2 -  construction de la metabox
 
-function MB_sticky_contacts($POST){
-    wp_nonce_field(basename(__FILE__), 'metabox_sticky_contacts_nonce');
+function MB_sticky_infos($POST){
+    wp_nonce_field(basename(__FILE__), 'metabox_sticky_infos_nonce');
     $sticky = get_post_meta($POST->ID, 'sticky', true);
     ?>
         <p>
@@ -84,9 +84,9 @@ function MB_sticky_contacts($POST){
 
 // 3 - Sauvegarde des données de la métabox
 
-add_action('save_post', 'save_metabox_sticky_contacts');
+add_action('save_post', 'save_metabox_sticky_infos');
 
-function save_metabox_sticky_contacts($POST_ID){
+function save_metabox_sticky_infos($POST_ID){
     if(isset($_POST['sticky'])){
         update_post_meta($POST_ID, 'sticky', $_POST['sticky']);
     }
@@ -94,14 +94,14 @@ function save_metabox_sticky_contacts($POST_ID){
 
 
 /* ---------------------------------------------------------------- */
-/* ------   METABOX  pour les coordonne du cabinet contacts   ----- */
+/* ------   METABOX  pour les coordonne du cabinet infos   ----- */
 /* ---------------------------------------------------------------- */
 
 
 add_action('add_meta_boxes', 'add_metabox_coordonne');
 
 function add_metabox_coordonne(){
-    add_meta_box('id_metabox_coordonne', 'Coordonées', 'MB_coordonne', 'contacts', 'side');
+    add_meta_box('id_metabox_coordonne', 'Coordonées', 'MB_coordonne', 'infos', 'side');
 }
 
 // 2 -  construction de la metabox

@@ -127,4 +127,4 @@ require get_template_directory() .'/functions/custom-servicecartes.php';
 //require get_template_directory() .'/functions/custom-event.php';
 
 // CPT : contact ( homepage -> section #contact & contact[page] )
-require get_template_directory() .'/functions/custom-contact.php';
+require get_template_directory() .'/functions/custom-info.php';

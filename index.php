@@ -250,7 +250,7 @@
             wp_reset_postdata();
 
             $args = array(
-                'post_type' => 'contacts',    // nom du CPT
+                'post_type' => 'infos',    // nom du CPT
                 'posts_per_page' => 1,      // limite
                 'orderby' => 'id',
                 'meta_key' => 'sticky',     // uniquement ceux qui on la mise en avant en 'oui'
