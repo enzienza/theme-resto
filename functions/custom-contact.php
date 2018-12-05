@@ -55,6 +55,45 @@ add_action('init',  'CPT_contacts');
 
 
 /* ---------------------------------------------------------------- */
+/* ------  METABOX  Pour sticky contacts (mise en avant)  ----- */
+/* ---------------------------------------------------------------- */
+
+
+// 1 - initialisation de la metabox
+
+add_action('add_meta_boxes', 'add_metabox_sticky_contacts');
+
+function add_metabox_sticky_contacts(){
+    add_meta_box('id_metabox_sticky_contacts', 'Mise en avant' , 'MB_sticky_contacts', 'contacts', 'side', 'high');
+}
+
+// 2 -  construction de la metabox
+
+function MB_sticky_contacts($POST){
+    wp_nonce_field(basename(__FILE__), 'metabox_sticky_contacts_nonce');
+    $sticky = get_post_meta($POST->ID, 'sticky', true);
+    ?>
+        <p>
+            <label for="sticky">Mettre en avant </label><br />
+            <input type="radio" <?php checked($sticky, 'oui'); ?> name="sticky" value="oui"/>Oui<br />
+            <input type="radio" <?php checked($sticky, 'non'); ?> name="sticky" value=""/>Non<br />
+        </p>
+    <?php
+
+}
+
+// 3 - Sauvegarde des données de la métabox
+
+add_action('save_post', 'save_metabox_sticky_contacts');
+
+function save_metabox_sticky_contacts($POST_ID){
+    if(isset($_POST['sticky'])){
+        update_post_meta($POST_ID, 'sticky', $_POST['sticky']);
+    }
+}
+
+
+/* ---------------------------------------------------------------- */
 /* ------   METABOX  pour les coordonne du cabinet contacts   ----- */
 /* ---------------------------------------------------------------- */
 

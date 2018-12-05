@@ -246,21 +246,37 @@
 
     <!-- DEBUT : section #contact -->
     <section id="contact" class=" bg-map">
+        <?php
+            wp_reset_postdata();
+
+            $args = array(
+                'post_type' => 'contacts',    // nom du CPT
+                'posts_per_page' => 1,      // limite
+                'orderby' => 'id',
+                'meta_key' => 'sticky',     // uniquement ceux qui on la mise en avant en 'oui'
+                'meta_value' => 'oui'
+            );
+            $my_query = new WP_query($args);
+            if($my_query->have_posts()) : while($my_query->have_posts()) : $my_query->the_post();
+         ?>
         <div class="container">
             <div class="row info-contact">
                 <div class="col-md-6 col-12 info-left">
                     <div class="icons flaticon-placeholder"></div>
                     <div class="text">
-                        Rue Saint-Eloi 36B,<br />
-                        4300 Waremme
+                        <?php echo get_post_meta($post->ID, 'adresse', true); ?>
+
                     </div>
                 </div><!-- ./ col-md-6 col-12 -->
                 <div class="col-md-6 col-12 info-right">
                     <div class="icons flaticon-phone-call"></div>
-                    <div class="text">019 33 05 03</div>
+                    <div class="text">
+                        <?php echo get_post_meta($post->ID, 'phone', true); ?>
+                    </div>
                 </div><!-- ./ col-md-6 col-12 -->
             </div><!-- ./ info-contact -->
         </div><!-- ./ container -->
+        <?php endwhile; endif;  wp_reset_postdata(); ?>
     </section><!-- ./ section #contact -->
 
     <!-- DEBUT : section #social -->

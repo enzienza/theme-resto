@@ -58,7 +58,6 @@ if ( ! function_exists( 'cigognedor_styles_scripts' ) ) {
 
 		// inclus
 		wp_enqueue_style( 'style', get_template_directory_uri().'/style.min.css');
-		wp_enqueue_style('metabox-style', get_template_directory().'/css/meta-box-styles.css');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cigognedor_style_scripts' );
