@@ -31,6 +31,12 @@
     background: radial-gradient(circle, rgb(255, 255, 255), rgba(251, 221, 152, 1));
 }
 
+@mixin bg-linear-gradient {
+    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
 @mixin bg-fly($img_url){
     background: url($img_url);
     background-size: contain;

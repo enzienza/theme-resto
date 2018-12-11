@@ -5,8 +5,9 @@
 *  Descrition : Création d'un CPT pour gerer les infos (resto & emporter)
 *
 *  Plan du fichier :
-*       1 - CPT_infos
-*
+*       2 - metabox_sticky_infos
+*       3 - metabox_coordonne
+*       
 */
 
 

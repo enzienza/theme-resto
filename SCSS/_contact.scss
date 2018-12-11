@@ -18,6 +18,36 @@
     }
 }
 
+#page-contact{
+    .map-header{
+        @include bg-linear-gradient;
+        iframe{
+            width: 100%;
+            position: relative;
+            z-index: -1;
+        }
+    }
+
+    /* .coordonne{
+        .th-icon{
+            text-align: right;
+            margin-right: 0;
+            padding-right: 0;
+            .icons{
+                font-size: 2rem;
+            }
+        }
+        .td-text{
+            vertical-align: middle;
+            margin-left: 0;
+        }
+        .table th, .table td{
+            border: inherit;
+        }
+    } */
+}
+
+
 // MEDIUM ------------------------------
 @include responsive(M){
     .info-contact{

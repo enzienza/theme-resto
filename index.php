@@ -109,18 +109,22 @@
             </div><!-- ./ box-left -->
             <div class="col-lg-6 col-12 box-right hidden">
                 <div class="row">
+
                     <div class="col-6 img-buffet">
-                        <img src="<?php echo get_template_directory_uri().'/img/buffet-1.jpg' ?>" alt="">
+                        <img src="<?php echo get_post_meta($post->ID, 'image1', true); ?>" alt="">
                     </div><!-- ./ img-buffet -->
+
                     <div class="col-6 img-buffet">
-                        <img src="<?php echo get_template_directory_uri().'/img/buffet-2.jpg' ?>" alt="">
+                        <img src="<?php echo get_post_meta($post->ID, 'image2', true); ?>" alt="">
                     </div><!-- ./ img-buffet -->
+
                     <div class="col-6 img-buffet">
-                        <img src="<?php echo get_template_directory_uri().'/img/buffet-3.jpg' ?>" alt="">
+                        <img src="<?php echo get_post_meta($post->ID, 'image3', true); ?>" alt="">
                     </div><!-- ./ img-buffet -->
+
                     <div class="col-6 img-buffet">
-                        <img src="<?php echo get_template_directory_uri().'/img/buffet-1.jpg' ?>" alt="">
-                    </div><!-- ./ img-buffet -->
+                        <img src="<?php echo get_post_meta($post->ID, 'image4', true); ?>" alt="">
+
                 </div><!-- ./ row -->
             </div><!-- ./ box-right -->
             <?php endwhile; endif;  wp_reset_postdata(); ?>
