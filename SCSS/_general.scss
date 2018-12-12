@@ -42,6 +42,11 @@ section{
     }
 }
 
+.bg_dark{
+    background: $colorDark;
+    height: 80px;
+    @include shadow-menu;
+}
 
 /* --- BOUTON --- */
 .btn{
@@ -142,6 +147,9 @@ section{
             padding: 0.5rem 1rem;
         }
     }
+    .bg_dark{
+        height: 66px;
+    }
 }
 
 
@@ -166,5 +174,8 @@ section{
         .card-title{
             line-height: 1;
         }
+    }
+    .bg_dark{
+        height: 66px;
     }
 }

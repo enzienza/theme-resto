@@ -22,7 +22,9 @@
         <nav class="navbar fixed-top navbar-expand-md ">
             <div class="container">
                 <!-- debut -> logo -->
-                <a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <?php bloginfo('name'); ?>
+                </a>
                 <!-- fin -> logo -->
 
                 <!-- Brand and toggle get grouped for better mobile display -->

@@ -26,8 +26,8 @@
             <div class="row">
                 <div class="col-md-5 col-12 slide-left">
                     <div class="big-logo">
-                        <!-- <img src="img/logo_bl.png" alt="La Cigogne d'Or de Waremme - Restaurant chinois - buffet wok à volonter"> -->
-                        <img src="<?php echo get_template_directory_uri().'/img/logo_bl.png' ?>" alt="La Cigogne d'Or de Waremme - Restaurant chinois - buffet wok à volonter">
+                        <img src="<?php echo get_post_meta($post->ID, 'logo', true); ?>" alt="">
+
                     </div><!-- ./ big-logo-->
                 </div><!-- ./ slide-left -->
                 <div class="col-md-7 col-12 slide-right">
