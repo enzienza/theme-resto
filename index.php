@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="titre">Boissons comprises *</div>
                                     <div class="prix"><?php echo get_post_meta($post->ID, 'BC_prix', true); ?></div>
-                                    <sub class="more">* <?php echo get_post_meta($post->ID, 'BC_comporte', true); ?></sub>
+                                    <sub class="more"><?php echo get_post_meta($post->ID, 'BC_comporte', true); ?></sub>
                                 </div><!-- ./ item-formule -->
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
@@ -178,8 +178,8 @@
                                     <div class="titre">Full boissons **</div>
                                     <div class="prix"><?php echo get_post_meta($post->ID, 'BF_prix', true); ?></div>
                                     <sub class="more">
-                                        ** <?php echo get_post_meta($post->ID, 'BF_comporte', true); ?><br />
-                                        <strong>! suppl. de 3€ pour autres apéritifs</strong>
+                                        <?php //echo get_post_meta($post->ID, 'BF_comporte', true); ?><br />
+                                        <?php $BF_comporte = get_post_meta($post->ID, 'BF_comporte', true); if($BF_comporte != ''){echo htmlspecialchars_decode($BF_comporte);} ?>
                                     </sub>
                                 </div><!-- ./ item-formule -->
                             </div><!-- ./ formule -->
@@ -228,25 +228,6 @@
         </div><!-- ./ row -->
     </section><!-- ./ section #tarif -->
 
-    <!-- DEBUT : section #event -->
-    <section id="event" class="bg-event">
-        <div class="container event-content">
-            <div class="text-event">
-                Vener passer les fêtes de fin d'année à la cigogne d'or
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-12 btn-left">
-                    <a href="#" class="btn btn-full-color">Noël</a>
-                </div>
-                <div class="col-md-6 col-12 btn-right">
-                    <a href="#" class="btn btn-full-color">Nouvelle An</a>
-                </div>
-            </div>
-        </div>
-    </section><!-- ./ section #event -->
-
-    <!-- DEBUT : section #karaoke -->
-    <section id="karaoke"></section><!-- ./ section #karaoke -->
 
     <!-- DEBUT : section #contact -->
     <section id="contact" class=" bg-map">
@@ -291,12 +272,12 @@
                 <div class="col align-self-center social-icon">
                     <ul>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="https://www.facebook.com/shaoke.ji" target="_blank">
                                 <span class="icons flaticon-facebook"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="https://www.instagram.com/lacigognedor/" target="_blank">
                                 <span class="icons flaticon-instagram"></span>
                             </a>
                         </li>

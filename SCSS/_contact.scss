@@ -1,5 +1,9 @@
 // main: style.scss
 
+/* ------------------------------- */
+/* ----    SECTION-CONTACT    ---- */
+/* ------------------------------- */
+
 .bg-map{
     @include bg-map('img/maps.png');
 
@@ -18,33 +22,65 @@
     }
 }
 
+/* ---------------------------- */
+/* ----    PAGE-CONTACT    ---- */
+/* ---------------------------- */
+
 #page-contact{
     .map-header{
-        @include bg-linear-gradient;
+        //@include bg-linear-gradient;
         iframe{
             width: 100%;
-            position: relative;
-            z-index: -1;
+            margin-bottom: 2rem;
+        }
+    }
+    .sous-titre{
+        color: $colorPrimary;
+        padding: 3rem 0;
+    }
+
+    // coordonne -------------------------
+    .coordonne{
+        text-align: center;
+    }
+
+    // information ----------------------
+    .information{
+        margin-top: 3rem;
+        text-align: center;
+        h4{
+            font-size: 1.3rem;
+            line-height: 2;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
     }
 
-    /* .coordonne{
-        .th-icon{
-            text-align: right;
-            margin-right: 0;
-            padding-right: 0;
-            .icons{
-                font-size: 2rem;
+    // opne-hour ------------------------
+    .open-hour{
+        text-align: center;
+        .day{
+            vertical-align: middle;
+        }
+        .table{
+            position: relative;
+            width: 50%;
+            left: 25%;
+            margin-bottom: 5%;
+            border: 1px solid #dee2e6;
+            .item-day{
+                border: 1px solid #dee2e6;
+            }
+            td, tr {
+                border-top: inherit;
+            }
+            tr .midi{
+                padding-bottom: 0;
             }
         }
-        .td-text{
-            vertical-align: middle;
-            margin-left: 0;
-        }
-        .table th, .table td{
-            border: inherit;
-        }
-    } */
+    }
+
+
 }
 
 
@@ -53,6 +89,25 @@
     .info-contact{
         .text{
             font-size: 1.1rem;
+        }
+    }
+
+    #page-contact{
+        .map-header{
+            iframe{
+                height: 60vh;
+            }
+        }
+        .sous-titre{
+            padding: 2rem 0;
+        }
+        .icons{
+            font-size: 2rem;
+        }
+        .open-hour{
+            .table{
+                margin-bottom: 7%;
+            }
         }
     }
 }
@@ -66,7 +121,28 @@
         .text{
             font-size: 1.2rem;
         }
+    }
 
+    #page-contact{
+        .map-header{
+            iframe{
+                height: 70vh;
+            }
+        }
+        .sous-titre{
+            padding: 1rem;
+        }
+        .icons{
+            font-size: 1.5rem;
+            padding-right: 10px;
+        }
+        .open-hour{
+            .table{
+                width: 100%;
+                position: inherit;
+                margin-bottom: 15%;
+            }
+        }
     }
 }
 
@@ -80,6 +156,36 @@
         .text{
             font-size: 1.1rem;
             padding: 2% 0;
+        }
+    }
+    #page-contact{
+        .map-header{
+            iframe{
+                height: 70vh;
+            }
+        }
+        .sous-titre{
+            padding: 1.5rem 0;
+        }
+        .icons{
+            font-size: 1.5rem;
+        }
+        .coordonne{
+            &-left{
+                padding: 5%;
+            }
+        }
+        .information{
+            .card{
+                margin-bottom: 5%;
+            }
+        }
+        .open-hour{
+            .table{
+                width: 100%;
+                position: inherit;
+                margin-bottom: 15%;
+            }
         }
     }
 }

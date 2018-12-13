@@ -1,0 +1,30 @@
+body.login{
+    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+                url('../img/la-cigogne-d-or.jpg') no-repeat fixed;
+    background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+                url('../img/la-cigogne-d-or.jpg') no-repeat fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+                url('../img/la-cigogne-d-or.jpg') no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100vh;
+}
+
+#pearlIt{
+    background-color: inherit;
+    box-shadow: none;
+}
+
+#login #nav a, #login #backtoblog a{
+    color: white;
+    display: block;
+    background: gray;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 4px rgba(85, 85, 85, 0.7);
+}
+
+h1 a{
+    background: url('../img/fagicon_bl.png') no-repeat !important;
+    width: 200px !important;
+    height: 198px !important;
+}

@@ -6,6 +6,8 @@
 <!-- ===== DEBUT SECTION-CONTACT ===== -->
 <!-- debut section specialite -->
 <section id="page-contact" class="container-fuild">
+    <div class="bg_dark"></div>
+
     <?php
     wp_reset_postdata();
 
@@ -31,7 +33,7 @@
 
         <!-- debut : coordonne -->
         <div class="coordonne">
-            <h3 class="sous-titre">Nos coordoné</h3>
+            <h3 class="sous-titre">Nos coordonnées</h3>
             <div class="row">
                 <div class="col-md-6 col-12 coordonne-left">
                     <span class="icons flaticon-placeholder"></span>
@@ -49,10 +51,9 @@
 
         <!-- debut : information -->
         <div class="information">
-            <h3 class="sous-titre">Nos information complementaire</h3>
+            <h3 class="sous-titre">Nos informations complémentaire</h3>
             <div class="row">
                 <div class="col-md-6 col-16 card card-left">
-                    <div class="card-icon"></div>
                     <div class="card-body">
                         <h4>Mode de paiement</h4>
                         <div>Cash, Visa, Marstercard</div>
@@ -72,131 +73,134 @@
         <!-- debut : open-hour -->
         <div class="open-hour">
             <h3 class="sous-titre">Nos heures d'ouvertures</h3>
-            <div class="row">
-                <div class="col-12 align-self-center">
 
+            <table class="table">
+                <tbody>
                     <!-- item-day : LUNDI -->
-                    <div class="row item-day">
-                        <div class="col-6">Lundi</div>
-                        <div class="col-6">Fermé</div>
-                    </div><!-- ./ LINDI -->
+                    <tr class="item-day">
+                        <td class="day">Lundi</td>
+                        <td class="heure">Fermé</td>
+                    </tr>
 
                     <!-- item-day : MARDI -->
-                    <div class="row item-day">
-                        <div class="col-6">Mardi</div>
-                        <div class="col-6">
-                            <div class="heure">
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Mardi</td>
+                            <td class="midi">
                                 <?php echo get_post_meta($post->ID, 'mardi_midi_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'mardi_midi_a', true); ?>
-                            </div>
-                            <div class="heure">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'mardi_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'mardi_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ MARDI -->
-
+                            </td>
+                        </tr>
+                    </tr>
 
                     <!-- item-day : MERCREDI -->
-                    <div class="row">
-                        <div class="col-6">Mercredi</div>
-                        <div class="col-6">
-                            <div class="heure">
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Mercredi</td>
+                            <td class="midi">
                                 <?php echo get_post_meta($post->ID, 'mercredi_midi_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'mercredi_midi_a', true); ?>
-                            </div>
-                            <div class="heure">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'mercredi_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'mercredi_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ MERCREDI -->
-
+                            </td>
+                        </tr>
+                    </tr>
 
                     <!-- item-day : JEUDI -->
-                    <div class="row">
-                        <div class="col-6">Jeudi</div>
-                        <div class="col-6">
-                            <div class="heure">
-                            <?php echo get_post_meta($post->ID, 'jeudi_midi_de', true); ?>
-                            -
-                            <?php echo get_post_meta($post->ID, 'jeudi_midi_a', true); ?></div>
-                            <div class="heure">
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Jeudi</td>
+                            <td class="midi">
+                                <?php echo get_post_meta($post->ID, 'jeudi_midi_de', true); ?>
+                                -
+                                <?php echo get_post_meta($post->ID, 'jeudi_midi_a', true); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'jeudi_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'jeudi_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ JEUDI -->
-
+                            </td>
+                        </tr>
+                    </tr>
 
                     <!-- item-day : VENDREDI -->
-                    <div class="row">
-                        <div class="col-6">Vendredi</div>
-                        <div class="col-6">
-                            <div class="heure">
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Vendredi</td>
+                            <td class="midi">
                                 <?php echo get_post_meta($post->ID, 'vendredi_midi_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'vendredi_midi_a', true); ?>
-                            </div>
-                            <div class="heure">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'vendredi_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'vendredi_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ VENDREDI -->
-
+                            </td>
+                        </tr>
+                    </tr>
 
                     <!-- item-day : SAMEDI -->
-                    <div class="row">
-                        <div class="col-6">Samedi</div>
-                        <div class="col-6">
-                            <div class="heure">
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Samedi</td>
+                            <td class="midi">
                                 <?php echo get_post_meta($post->ID, 'samedi_midi_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'samedi_midi_a', true); ?>
-                            </div>
-                            <div class="heure">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'samedi_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'samedi_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ SAMEDI -->
+                            </td>
+                        </tr>
+                    </tr>
 
-
-                    <!-- item-day : dimanche -->
-                    <div class="row">
-                        <div class="col-6">Dimanche</div>
-                        <div class="col-6">
-                            <div class="heure">
+                    <!-- item-day : DIMANCHE -->
+                    <tr class="item-day">
+                        <tr>
+                            <td class="day" rowspan="2">Dimanche</td>
+                            <td class="midi">
                                 <?php echo get_post_meta($post->ID, 'dimanche_midi_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'dimanche_midi_a', true); ?>
-                            </div>
-                            <div class="heure">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="soir">
                                 <?php echo get_post_meta($post->ID, 'dimanche_soir_de', true); ?>
                                 -
                                 <?php echo get_post_meta($post->ID, 'dimanche_soir_a', true); ?>
-                            </div>
-                        </div>
-                    </div><!-- ./ DIMANCHE -->
-                </div>
-            </div>
+                            </td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
 
-    </div>
-
-
-
-
-<?php endwhile; endif;  wp_reset_postdata(); ?>
+    <?php endwhile; endif;  wp_reset_postdata(); ?>
 </section>
 <!-- fin section specialite -->
 <!-- ===== FIN SECTION-CONTACT ===== -->

@@ -96,10 +96,10 @@ add_filter('the_generator', 'fb_remove_version');
 /* ------------------------------------------------------------ */
 
 //  Personalisé la page de connection
-//require get_template_directory() .'/functions/custom-admin.php';
+require get_template_directory() .'/functions/custom-admin.php';
 
 //	Cacher tel ou tel element du dashboard du back-end
-//require get_template_directory() .'/functions/custom-general.php';
+require get_template_directory() .'/functions/custom-general.php';
 
 
 //	CPT : Cover ( homepage -> section #slide )

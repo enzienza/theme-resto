@@ -1,0 +1,146 @@
+// main: style.scss
+
+
+#error{
+    background: $colorDark;
+    height: 100vh;
+    .error-box{
+        &-left{
+            .big-logo{
+                position: inherit;
+                top: 40%;
+                p{
+                    font-family: $fontSecondary;
+                    color: $colorLight;
+                    text-align: center;
+                    font-size: 2rem;
+                    letter-spacing: 5px;
+                    margin-left: 7%;
+                }
+            }
+        }
+        &-right{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 40%;
+            h1{
+                font-size: 9rem;
+                text-align: center;
+                color: $colorLight;
+            }
+            .titre-h1{
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+}
+
+// MEDIUM ------------------------------
+@include responsive(M){
+    #error{
+        .error-box{
+            &-left{
+                text-align: center;
+                margin-bottom: 10%;
+                .big-logo{
+                    top: 50%;
+                    img{
+                        width: 80%;
+                    }
+                    p{
+                        font-size: 1rem;
+                        letter-spacing: 1px;
+                        margin-bottom: 6%;
+                    }
+                }
+
+            }
+            &-right{
+                top: 31%;
+                h1{
+                    font-size: 3rem;
+                    margin-top: 23%;
+                }
+                .titre-h1{
+                    font-size: 1.3rem;
+                    line-height: inherit;
+                    padding: 3% 0;
+                }
+            }
+        }
+    }
+}
+
+// SMALL ------------------------------
+@include responsive(S){
+    #error{
+        height: 150vh;
+        .error-box{
+            &-left{
+                text-align: center;
+                margin-bottom: 10%;
+                .big-logo{
+                    img{
+                        width: 50%;
+                    }
+                    p{
+                        font-size: 1rem;
+                        letter-spacing: 1px;
+                        margin-bottom: 6%;
+                    }
+                }
+
+            }
+            &-right{
+                position: inherit;
+                h1{
+                    font-size: 4rem;
+                    margin-top: 23%;
+                }
+                .titre-h1{
+                    font-size: 1.7rem;
+                    line-height: inherit;
+                    padding: 7% 0;
+                }
+            }
+        }
+    }
+}
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+    #error{
+        height: 125vh;
+        .error-box{
+            &-left{
+                .big-logo{
+                    top: 30%;
+                    text-align: center;
+                    margin-bottom: 20%;
+                    img{
+                        width: 60%;
+                    }
+                    p{
+                        font-size: 1rem;
+                        letter-spacing: 1px;
+                        margin-bottom: 6%;
+                    }
+                }
+            }
+            &-right{
+                position: inherit;
+                h1{
+                    font-size: 4rem;
+                    margin-top: 23%;
+                }
+                .titre-h1{
+                    font-size: 1.7rem;
+                    line-height: inherit;
+                    padding: 7% 0;
+                }
+            }
+        }
+    }
+}

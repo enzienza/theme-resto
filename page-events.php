@@ -10,7 +10,7 @@
 
     </div>
     <div class="container page-event-content">
-        <h1 class="titre-h1">Non événements</h1>
+        <h1 class="titre-h1">Nos événements</h1>
         <div class="row">
             <?php
             wp_reset_postdata();
