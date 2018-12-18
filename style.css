@@ -6415,7 +6415,7 @@ section:after {
 
 @media only screen and (min-width: 768px) and (max-width: calc(992px - 1px)) {
   .bg-cover {
-    height: 80vh;
+    height: 95vh;
   }
   .slide-right .titre {
     font-size: 40px;
@@ -6624,6 +6624,7 @@ section:after {
   margin-bottom: 20px;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  height: 180px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: calc(992px - 1px)) {
@@ -6636,6 +6637,7 @@ section:after {
   }
   .box-right .img-buffet img {
     margin-left: 12px;
+    height: 240px;
   }
 }
 
@@ -6648,6 +6650,7 @@ section:after {
   }
   .box-right .img-buffet img {
     margin-left: 20px;
+    height: 160px;
   }
 }
 
@@ -6665,6 +6668,7 @@ section:after {
   }
   .box-right .img-buffet img {
     margin-bottom: 5px;
+    height: 100px;
   }
 }
 
