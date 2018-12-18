@@ -160,25 +160,28 @@
                                         <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Sans boissons</div>
-                                    <div class="prix"><?php echo get_post_meta($post->ID, 'SB_prix', true); ?></div>
-                                    <sub class="more"><?php echo get_post_meta($post->ID, 'SB_comporte', true); ?></sub>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'SB_prix', true); ?> €</div>
+                                    <sub class="more">
+                                        <?php $SB_comporte = get_post_meta($post->ID, 'SB_comporte', true); if($SB_comporte != ''){echo htmlspecialchars_decode($SB_comporte);} ?>
+                                    </sub>
                                 </div><!-- ./ item-formule -->
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
                                         <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Boissons comprises *</div>
-                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BC_prix', true); ?></div>
-                                    <sub class="more"><?php echo get_post_meta($post->ID, 'BC_comporte', true); ?></sub>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BC_prix', true); ?> €</div>
+                                    <sub class="more">
+                                        <?php $BC_comporte = get_post_meta($post->ID, 'BC_comporte', true); if($BC_comporte != ''){echo htmlspecialchars_decode($BC_comporte);} ?>
+                                    </sub>
                                 </div><!-- ./ item-formule -->
                                 <div class="col-md-4 col-12 item-formule">
                                     <div class="icon">
                                         <img src="<?php echo get_template_directory_uri().'/img/icon_repas.png' ?>" alt="">
                                     </div>
                                     <div class="titre">Full boissons **</div>
-                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BF_prix', true); ?></div>
+                                    <div class="prix"><?php echo get_post_meta($post->ID, 'BF_prix', true); ?> €</div>
                                     <sub class="more">
-                                        <?php //echo get_post_meta($post->ID, 'BF_comporte', true); ?><br />
                                         <?php $BF_comporte = get_post_meta($post->ID, 'BF_comporte', true); if($BF_comporte != ''){echo htmlspecialchars_decode($BF_comporte);} ?>
                                     </sub>
                                 </div><!-- ./ item-formule -->
