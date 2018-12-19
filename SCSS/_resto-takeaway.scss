@@ -1,0 +1,48 @@
+// main: style.scss
+
+
+/* ---------------------------- */
+/* -----    PAGE-CARTE    ----- */
+/* ---------------------------- */
+#page-carte{
+    .page-carte-content{
+        margin-top: 4%;
+        //height: 77vh;
+        height: auto;
+    }
+    .titre-h1{
+        margin-bottom: 4%;
+    }
+}
+
+
+
+/* ------------------------------- */
+/* -----    PAGE-EMPORTER    ----- */
+/* ------------------------------- */
+#page-emporter{
+    .page-emporter-content{
+        margin-top: 4%;
+        //height: 77vh;
+        height: auto;
+    }
+    .titre-h1{
+        margin-bottom: 4%;
+    }
+}
+// MEDIUM ------------------------------
+@include responsive(M){
+
+}
+
+
+// SMALL ------------------------------
+@include responsive(S){
+
+}
+
+
+//  EXTRA SMALL ------------------------------
+@include responsive(XS){
+
+}

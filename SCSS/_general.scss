@@ -48,6 +48,14 @@ section{
     @include shadow-menu;
 }
 
+.modal-dialog{
+    max-width: 100vw;
+    width: 90%;
+    img{
+        width: 100%;
+    }
+}
+
 /* --- BOUTON --- */
 .btn{
     width: auto;

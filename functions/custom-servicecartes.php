@@ -46,6 +46,7 @@ function CPT_servicecates() {
             'menu_icon'=>'dashicons-editor-ul',
             'supports' => array(
                 'title',
+                'editor',
             )
         )
     );
